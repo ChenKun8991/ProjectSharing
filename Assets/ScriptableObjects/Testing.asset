@@ -19,37 +19,16 @@ MonoBehaviour:
   currentHealth: 100
   currentMana: 100
   currentLevel: 100
-  upgrades:
-  - basicStats:
+  upgradeIncrement: 1.5
+  upgrade:
+    basicStats:
     - 100
     - 100
+    - 50
     - 100
-    - 100
-    - 100
-    - 100
-    - 100
-    - 100
-    - 100
-    - 100
-  - basicStats:
-    - 110
-    - 110
-    - 110
-    - 110
-    - 110
-    - 110
-    - 110
-    - 110
-    - 110
-    - 110
-  - basicStats:
-    - 120
-    - 120
-    - 120
-    - 120
-    - 120
-    - 120
-    - 120
-    - 120
-    - 120
-    - 120
+    - 30
+    - 30
+    - 25
+    - 125
+    - 0.85
+    - 4

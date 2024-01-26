@@ -16,7 +16,9 @@ public class EnemyBase : ScriptableObject
     public int currentMana;
     public int currentLevel;
 
-    public Upgrades[] upgrades = new Upgrades[3];
+    public float upgradeIncrement = 1.5f;
+
+    public Upgrades upgrade = new Upgrades();
 }
 
 public enum Classes
@@ -29,7 +31,14 @@ public enum Classes
 [System.Serializable]
 public class Upgrades
 {
-    public string[] basicStats = new string[10];
+    // only hp and ad is scalable after upgrade 
+    // index 0 and 2 
+    public float[] basicStats = new float[10];
+    // HP MANA 
+    // AD AP
+    // AR MR
+    // CC CD
+    // AS Range
 }
 
 [System.Serializable]
