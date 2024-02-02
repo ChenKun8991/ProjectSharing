@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8671a8a931f5ef419d24ae8bc5a2d59, type: 3}
+  m_Name: 3_1
+  m_EditorClassIdentifier: 
+  img: {fileID: 21300000, guid: 17d53652b3c96ca49b3b06d3576e1636, type: 3}
+  rank: 3
+  description: Brain shaw 1
+  traits: 0000000002000000
+  currentHealth: 100
+  currentMana: 100
+  currentLevel: 100
+  upgradeIncrement: 1.5
+  upgrade:
+    basicStats:
+    - 100
+    - 100
+    - 50
+    - 100
+    - 30
+    - 30
+    - 25
+    - 125
+    - 0.85
+    - 4

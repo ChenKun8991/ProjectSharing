@@ -32,7 +32,7 @@ public enum Classes
 public class Upgrades
 {
     // only hp and ad is scalable after upgrade 
-    // index 0 and 2 
+    // index 0 and 2 g
     public float[] basicStats = new float[10];
     // HP MANA 
     // AD AP
