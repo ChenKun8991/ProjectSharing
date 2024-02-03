@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Card", order = 1)]
 public class EnemyBase : ScriptableObject
 {
+    public string charName;
     public Sprite img;
     public int rank;
     public string description;

@@ -14,11 +14,20 @@ public class CardController : MonoBehaviour
     public int poolSize = 20;
 
 
-    public GameObject locationToSpawn;
+    public GameObject storeLocation;
+    public GameObject yourCardLocation;
 
     public Dictionary<int, List<EnemyBase>> groupedCards = new Dictionary<int, List<EnemyBase>>();
+
     public void Awake()
     {
+
+        for (int i = 0; i < poolSize; i ++)
+        {
+            GameObject g =  Instantiate(prefab);
+            ENEMYPOOL.Enqueue(g);
+            g.SetActive(false);
+        }
         for (int i = 0 ; i < enemyObject.Length; i++)
         {
             List<EnemyBase> a = groupedCards.GetValueOrDefault(enemyObject[i].rank, new List<EnemyBase>());
@@ -34,31 +43,39 @@ public class CardController : MonoBehaviour
     }
     public void Reroll()
     {
-        for(int i = 0; i < StaticValues.CARDS_PER_ROLL; i++)
+        List<GameObject> gl = new List<GameObject>();
+        for (int i = 0; i < storeLocation.transform.childCount; i++)
+        {
+            GameObject g = storeLocation.transform.GetChild(i).gameObject;
+        }
+
+
+
+        for (int i = 0; i < StaticValues.CARDS_PER_ROLL; i++)
         {
             // a function to calculate the change 
             // let say 0 - 100 
             // 0 - 75
             // 76 - 95
             // 96 - 99
+            GameObject g = ENEMYPOOL.Dequeue();
+            g.transform.SetParent(storeLocation.transform);
+            g.SetActive(true);
             int chance = Random.Range(0, 100);
             if(chance >= 96)
             {
                 // legendary card
-                Instantiate(prefab, locationToSpawn.transform);
                 Debug.Log(getSelectedRankCard(5).description);
             }
             else if( chance >= 76)
             {
                 // epic card
-                Instantiate(prefab, locationToSpawn.transform);
                 Debug.Log(getSelectedRankCard(4).description);
 
             }
             else
             {
                 // rare card
-                Instantiate(prefab, locationToSpawn.transform);
                 Debug.Log(getSelectedRankCard(3).description);
             }
         }
@@ -77,10 +94,15 @@ public class CardController : MonoBehaviour
         return null;
     }
 
-    public List<EnemyBase> getAllSelectedRankCard(int rank)
+    public void buyCard()
     {
-        List<EnemyBase> enemyBases = new List<EnemyBase>();
 
-        return enemyBases;
     }
+
+    public void sellCard()
+    {
+
+    }
+
+  
 }
