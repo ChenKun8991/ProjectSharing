@@ -152,6 +152,7 @@ MonoBehaviour:
   card: {fileID: 0}
   border: {fileID: 7016279628844266136}
   img: {fileID: 2683518144455026537}
+  assetManagement: {fileID: 0}
 --- !u!1 &2363485120874786307
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +295,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 17d53652b3c96ca49b3b06d3576e1636, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

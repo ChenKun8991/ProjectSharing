@@ -6,8 +6,4 @@ public class AssetManagement : MonoBehaviour
 {
     public Sprite[] cardBorders;
 
-    public Sprite[] getCardBorders()
-    {
-        return cardBorders;
-    }
 }

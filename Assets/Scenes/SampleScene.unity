@@ -1032,7 +1032,6 @@ MonoBehaviour:
   - {fileID: -2133238375, guid: 17ec58161a30f9940af67b996b39b265, type: 3}
   - {fileID: 77076724, guid: 17ec58161a30f9940af67b996b39b265, type: 3}
   - {fileID: 810695473, guid: 17ec58161a30f9940af67b996b39b265, type: 3}
-  cardCore: []
 --- !u!1 &1771118545
 GameObject:
   m_ObjectHideFlags: 0

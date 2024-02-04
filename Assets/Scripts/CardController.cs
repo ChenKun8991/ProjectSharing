@@ -113,11 +113,14 @@ public class CardController : MonoBehaviour
 
     public void buyCard(GameObject g)
     {
-        g.transform.SetParent(yourCardLocation.transform);
-        Button button = g.GetComponent<Button>();
-        button.onClick.RemoveAllListeners();
-        button.onClick.AddListener(() => sellCard(g));
+        if (yourCardLocation.transform.childCount < 10)
+        {
+            g.transform.SetParent(yourCardLocation.transform);
+            Button button = g.GetComponent<Button>();
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => sellCard(g));
 
+        }
     }
 
     public void sellCard(GameObject g)
