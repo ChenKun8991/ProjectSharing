@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * The script to store all const values
+ */
 public class StaticValues : MonoBehaviour
 {
     public const int CARDS_PER_ROLL = 5;

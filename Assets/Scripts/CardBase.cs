@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * base card scriptable object 
+ */
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Card", order = 1)]
 public class EnemyBase : ScriptableObject
@@ -22,12 +24,18 @@ public class EnemyBase : ScriptableObject
     public Upgrades upgrade = new Upgrades();
 }
 
+/*
+ * enum for different classes
+ */
 public enum Classes
 {
     PowerLifter,
     StrongMan,
 }
-
+/*
+ * upgrades for differnt states 
+ * system.seriablizble to display it on inspector
+ */
 [System.Serializable]
 public class Upgrades
 {
@@ -40,7 +48,10 @@ public class Upgrades
     // CC CD
     // AS Range
 }
-
+/*
+ * equipment state boost if needed for differnt states 
+ * system.seriablizble to display it on inspector
+ */
 [System.Serializable]
 public class Equipment
 {

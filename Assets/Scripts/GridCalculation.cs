@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * The script to dynamically calculate the screen width and set all other canvas object ot align properly 
+ */
 public class GridCalculation : MonoBehaviour
 {
     public GridLayoutGroup cardStore;

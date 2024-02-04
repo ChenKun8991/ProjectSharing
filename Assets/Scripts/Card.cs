@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * The script for each invidual card, after passing in the enemybase from controller, this is where we should set all different setting to the card gameobject
+ */
 public class Card : MonoBehaviour
 {
     public EnemyBase card;
@@ -28,15 +31,5 @@ public class Card : MonoBehaviour
     private void OnDisable()
     {
         card = null;
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

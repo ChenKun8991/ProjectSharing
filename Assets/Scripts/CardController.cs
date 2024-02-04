@@ -3,26 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * This script to manage object pooling and all main functions
+ */
 public class CardController : MonoBehaviour
 {
+    // card prefab
     public GameObject prefab;
+    // card prefab object pooling list 
     public static Queue<GameObject> ENEMYPOOL = new Queue<GameObject>();
 
 
-    // Card pooling 
-    // Reroll chance
+    // all scriptable objects
     public EnemyBase[] enemyObject;
+    
+    // object pooling size 
     public int poolSize = 20;
 
 
+    // card store parent game object
     public GameObject storeLocation;
+    // your cards parent game object
     public GameObject yourCardLocation;
 
+    // the dictionary that contain all key value of rank and the corresponding cards in a list
     public Dictionary<int, List<EnemyBase>> groupedCards = new Dictionary<int, List<EnemyBase>>();
 
     public void Awake()
     {
 
+        // Set up the initial object pool 
+        // Chanllenge make the object pooling dynamic ~ 
         for (int i = 0; i < poolSize; i ++)
         {
             GameObject g =  Instantiate(prefab);
@@ -30,6 +41,8 @@ public class CardController : MonoBehaviour
             ENEMYPOOL.Enqueue(g);
             g.SetActive(false);
         }
+
+        // set up dictionary for different rank cards
         for (int i = 0 ; i < enemyObject.Length; i++)
         {
             List<EnemyBase> a = groupedCards.GetValueOrDefault(enemyObject[i].rank, new List<EnemyBase>());
@@ -37,12 +50,12 @@ public class CardController : MonoBehaviour
             groupedCards[enemyObject[i].rank] = a;
         }
 
-        for (int i = StaticValues.CARDS_MIN_RANK; i <= StaticValues.CARDS_MAX_RANK; i++)
-        {
-            Debug.Log(groupedCards[i].Count);
-        }
         Reroll();
     }
+
+    /*
+     * Function for the store reroll
+     */
     public void Reroll()
     {
         List<GameObject> gl = populateStoreCardObject();
@@ -75,6 +88,9 @@ public class CardController : MonoBehaviour
         }
     }
 
+    /*
+     * function to make sure there are 5 gameobject to display for each reroll
+     */
     public List<GameObject> populateStoreCardObject()
     {
         List <GameObject> gl =new List<GameObject>();
@@ -99,6 +115,9 @@ public class CardController : MonoBehaviour
         return gl;
     }
 
+    /*
+     * function to get a random corresponding rank card
+     */
     public EnemyBase getSelectedRankCard(int rank)
     {
         if (groupedCards.ContainsKey(rank))
@@ -111,6 +130,9 @@ public class CardController : MonoBehaviour
         return null;
     }
 
+    /*
+     * function to buy card with max 10 card as max
+     */
     public void buyCard(GameObject g)
     {
         if (yourCardLocation.transform.childCount < 10)
@@ -123,6 +145,9 @@ public class CardController : MonoBehaviour
         }
     }
 
+    /*
+     * function to sell card
+     */
     public void sellCard(GameObject g)
     {
         ENEMYPOOL.Enqueue(g);
