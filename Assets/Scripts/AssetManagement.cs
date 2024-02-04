@@ -5,5 +5,9 @@ using UnityEngine;
 public class AssetManagement : MonoBehaviour
 {
     public Sprite[] cardBorders;
-    public Sprite[] cardCore;
+
+    public Sprite[] getCardBorders()
+    {
+        return cardBorders;
+    }
 }

@@ -24,9 +24,8 @@ public class EnemyBase : ScriptableObject
 
 public enum Classes
 {
-    Country,
-    Disco,
-    EDM
+    PowerLifter,
+    StrongMan,
 }
 
 [System.Serializable]

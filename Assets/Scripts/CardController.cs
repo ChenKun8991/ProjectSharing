@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class CardController : MonoBehaviour
         for (int i = 0; i < poolSize; i ++)
         {
             GameObject g =  Instantiate(prefab);
+            g.GetComponent<Card>().assetManagement = this.GetComponent<AssetManagement>();
             ENEMYPOOL.Enqueue(g);
             g.SetActive(false);
         }
@@ -43,13 +45,7 @@ public class CardController : MonoBehaviour
     }
     public void Reroll()
     {
-        List<GameObject> gl = new List<GameObject>();
-        for (int i = 0; i < storeLocation.transform.childCount; i++)
-        {
-            GameObject g = storeLocation.transform.GetChild(i).gameObject;
-        }
-
-
+        List<GameObject> gl = populateStoreCardObject();
 
         for (int i = 0; i < StaticValues.CARDS_PER_ROLL; i++)
         {
@@ -58,32 +54,53 @@ public class CardController : MonoBehaviour
             // 0 - 75
             // 76 - 95
             // 96 - 99
-            GameObject g = ENEMYPOOL.Dequeue();
-            g.transform.SetParent(storeLocation.transform);
-            g.SetActive(true);
+            GameObject g = gl[i];
             int chance = Random.Range(0, 100);
             if(chance >= 96)
             {
                 // legendary card
-                Debug.Log(getSelectedRankCard(5).description);
+                g.GetComponent<Card>().setCard(getSelectedRankCard(5));
             }
             else if( chance >= 76)
             {
                 // epic card
-                Debug.Log(getSelectedRankCard(4).description);
+                g.GetComponent<Card>().setCard(getSelectedRankCard(3));
 
             }
             else
             {
                 // rare card
-                Debug.Log(getSelectedRankCard(3).description);
+                g.GetComponent<Card>().setCard(getSelectedRankCard(3));
             }
         }
     }
 
+    public List<GameObject> populateStoreCardObject()
+    {
+        List <GameObject> gl =new List<GameObject>();
+        for (int i = 0; i < storeLocation.transform.childCount; i++)
+        {
+            GameObject g = storeLocation.transform.GetChild(i).gameObject;
+            gl.Add(g);
+            Button button = g.GetComponent<Button>();
+            button.onClick.AddListener(() => buyCard(g));
+         
+        }
+
+        while (gl.Count != StaticValues.CARDS_PER_ROLL)
+        {
+            GameObject g = ENEMYPOOL.Dequeue();
+            g.transform.SetParent(storeLocation.transform);
+            g.SetActive(true);
+            gl.Add(g);
+            Button button = g.GetComponent<Button>();
+            button.onClick.AddListener(() => buyCard(g));
+        }
+        return gl;
+    }
+
     public EnemyBase getSelectedRankCard(int rank)
     {
-        EnemyBase e = null;
         if (groupedCards.ContainsKey(rank))
         {
             int index = Random.Range(0, groupedCards[rank].Count);
@@ -94,14 +111,19 @@ public class CardController : MonoBehaviour
         return null;
     }
 
-    public void buyCard()
+    public void buyCard(GameObject g)
     {
+        g.transform.SetParent(yourCardLocation.transform);
+        Button button = g.GetComponent<Button>();
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(() => sellCard(g));
 
     }
 
-    public void sellCard()
+    public void sellCard(GameObject g)
     {
-
+        ENEMYPOOL.Enqueue(g);
+        g.SetActive(false);
     }
 
   

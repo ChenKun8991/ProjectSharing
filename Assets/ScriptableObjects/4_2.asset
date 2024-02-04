@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8671a8a931f5ef419d24ae8bc5a2d59, type: 3}
   m_Name: 4_2
   m_EditorClassIdentifier: 
-  img: {fileID: 21300000, guid: 17d53652b3c96ca49b3b06d3576e1636, type: 3}
+  charName: 
+  img: {fileID: 21300000, guid: f3ac2c8760329d0428e76933e5de222b, type: 3}
   rank: 4
   description: Thor 2
-  traits: 0000000002000000
+  traits: 01000000
   currentHealth: 125
   currentMana: 125
   currentLevel: 125

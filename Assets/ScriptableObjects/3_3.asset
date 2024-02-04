@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8671a8a931f5ef419d24ae8bc5a2d59, type: 3}
   m_Name: 3_3
   m_EditorClassIdentifier: 
-  img: {fileID: 21300000, guid: 17d53652b3c96ca49b3b06d3576e1636, type: 3}
+  charName: 
+  img: {fileID: 21300000, guid: bf1ee51f4557ac74b9523a13e28b96fc, type: 3}
   rank: 3
   description: Brain shaw 3
-  traits: 0000000002000000
+  traits: 0000000001000000
   currentHealth: 100
   currentMana: 100
   currentLevel: 100
