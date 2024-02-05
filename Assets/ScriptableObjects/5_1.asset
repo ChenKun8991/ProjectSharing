@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 5_1
   m_EditorClassIdentifier: 
   charName: 
-  img: {fileID: 21300000, guid: 17d53652b3c96ca49b3b06d3576e1636, type: 3}
+  img: {fileID: 21300000, guid: 53ab3ff6998ee3342a6e71e1eadd876d, type: 3}
   rank: 5
-  description: Eddie the best 5
+  description: Eddie THE GOD
   traits: 0000000001000000
   currentHealth: 150
   currentMana: 150

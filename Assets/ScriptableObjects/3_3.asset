@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 3_3
   m_EditorClassIdentifier: 
   charName: 
-  img: {fileID: 21300000, guid: bf1ee51f4557ac74b9523a13e28b96fc, type: 3}
+  img: {fileID: 21300000, guid: 80461b0b6fedf0a4980e470f6b9d5ea1, type: 3}
   rank: 3
-  description: Brain shaw 3
+  description: JOHN HACK
   traits: 0000000001000000
   currentHealth: 100
   currentMana: 100

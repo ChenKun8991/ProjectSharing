@@ -48,13 +48,3 @@ public class Upgrades
     // CC CD
     // AS Range
 }
-/*
- * equipment state boost if needed for differnt states 
- * system.seriablizble to display it on inspector
- */
-[System.Serializable]
-public class Equipment
-{
-    public int[] statIndex;
-    public int[] statsAmount;
-}

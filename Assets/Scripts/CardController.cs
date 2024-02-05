@@ -77,7 +77,7 @@ public class CardController : MonoBehaviour
             else if( chance >= 76)
             {
                 // epic card
-                g.GetComponent<Card>().setCard(getSelectedRankCard(3));
+                g.GetComponent<Card>().setCard(getSelectedRankCard(4));
 
             }
             else

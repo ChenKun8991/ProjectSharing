@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 4_2
   m_EditorClassIdentifier: 
   charName: 
-  img: {fileID: 21300000, guid: f3ac2c8760329d0428e76933e5de222b, type: 3}
+  img: {fileID: 21300000, guid: aa62789d8a7ba1f499e6a6484226e69d, type: 3}
   rank: 4
-  description: Thor 2
+  description: SHAW
   traits: 01000000
   currentHealth: 125
   currentMana: 125
