@@ -137,6 +137,7 @@ public class CardController : MonoBehaviour
     {
         if (yourCardLocation.transform.childCount < 10)
         {
+            g.SetActive(true);
             g.transform.SetParent(yourCardLocation.transform);
             Button button = g.GetComponent<Button>();
             button.onClick.RemoveAllListeners();
@@ -150,8 +151,11 @@ public class CardController : MonoBehaviour
      */
     public void sellCard(GameObject g)
     {
-        ENEMYPOOL.Enqueue(g);
+        Button button = g.GetComponent<Button>();
+        button.onClick.RemoveAllListeners();
+        g.transform.parent = null;
         g.SetActive(false);
+        ENEMYPOOL.Enqueue(g);
     }
 
   
