@@ -124,8 +124,10 @@ public class CardController : MonoBehaviour
 
         }
 
+        // Ensure the store has a specific number of cards displayed, in our case it is 5 cards
         while (gl.Count != StaticValues.CARDS_PER_ROLL)
         {
+            // Remove a GameObject from the ENEMYPOOL queue
             GameObject g = ENEMYPOOL.Dequeue();
             // Set the parent of the GameObject to storeLocation, making it appear in the store UI
             g.transform.SetParent(storeLocation.transform);

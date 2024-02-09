@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * The script to store all const values
+ * The script to store all const values, easier to store
  */
 public class StaticValues : MonoBehaviour
 {
