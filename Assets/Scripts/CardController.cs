@@ -157,6 +157,4 @@ public class CardController : MonoBehaviour
         g.SetActive(false);
         ENEMYPOOL.Enqueue(g);
     }
-
-  
 }
