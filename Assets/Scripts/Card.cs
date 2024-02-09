@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * The script for each invidual card, after passing in the enemybase from controller, this is where we should set all different setting to the card gameobject
+ * The script for each invidual card, after passing in the enemybase from controller, 
+ * this is where we should set all different setting to the card gameobject
  */
 public class Card : MonoBehaviour
 {
